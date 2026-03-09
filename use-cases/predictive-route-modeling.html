@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Route Modeling | Case Study | Informatixio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF8C42;
+            --navy: #1F4E78;
+            --bg: #FFF8F0;
+            --white: #FFFFFF;
+            --border: #E2E8F0;
+            --text: #0F172A;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .nav-head {
+            background: var(--white);
+            border-bottom: 4px solid var(--primary);
+            padding: 1.5rem 2rem;
+            position: relative;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-head a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .hero-banner {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 5rem;
+            border-radius: 12px;
+            margin-bottom: 5rem;
+            display: flex;
+            gap: 5rem;
+            align-items: center;
+            box-shadow: 20px 20px 0 var(--primary);
+        }
+
+        .hero-banner h1 {
+            font-family: 'Outfit';
+            font-size: 4rem;
+            color: var(--navy);
+            line-height: 1;
+            margin: 0;
+        }
+
+        .hero-banner img {
+            width: 450px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 8rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            border-bottom: 5px solid var(--navy);
+            border-radius: 8px;
+        }
+
+        .card div {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            font-family: 'Outfit';
+            font-size: 3rem;
+            margin: 0;
+            color: var(--navy);
+        }
+
+        .main-text {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 8rem;
+            margin-bottom: 8rem;
+            align-items: start;
+        }
+
+        h2 {
+            font-family: 'Outfit';
+            font-size: 2.5rem;
+            color: var(--navy);
+        }
+
+        .tech-list {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: var(--bg);
+            color: var(--navy);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 1000px) {
+
+            .hero-banner,
+            .grid,
+            .main-text {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-banner img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-head">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
+            <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 4px;"></div>
+                <span
+                    style="font-family: 'Outfit'; font-weight: 800; color: var(--navy); font-size: 1.2rem;">INFORMATIX<span
+                        style="color: var(--primary);">IO</span></span>
+            </a>
+            <nav style="display: flex; gap: 2rem; align-items: center;">
+                <a href="../index.html"
+                    style="color: var(--navy); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Home</a>
+                <a href="../index.html#solutions"
+                    style="color: var(--navy); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Solutions</a>
+                <a href="../index.html#contact"
+                    style="background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 0.85rem; text-transform: uppercase;">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class="hero-banner">
+            <div>
+                <h1>Predictive Maritime Route Modeling.</h1>
+                <p style="margin-top: 2rem; font-size: 1.2rem; opacity: 0.7;">ML-driven global port telemetry for
+                    sub-second schedule optimization and congestion de-bottlenecking.</p>
+            </div>
+            <img src="../assets/maritime_routing.png" alt="Maritime Modeling">
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div>ROUTE_EFFICIENCY</div>
+                <h3>+22%</h3>
+            </div>
+            <div class="card">
+                <div>FUEL_SAVINGS</div>
+                <h3>$4.2M</h3>
+            </div>
+            <div class="card">
+                <div>OTP_RATING</div>
+                <h3>ELITE</h3>
+            </div>
+        </div>
+
+        <div class="main-text">
+            <div>
+                <h2>Strategic Execution</h2>
+                <p>We solved a critical maritime bottleneck by transforming reactive navigation into a predictive
+                    intelligence system. Using global port telemetry, we now anticipate delays 96 hours before impact.
+                </p>
+                <p>AIS data ingestion monitors real-time port activity across 400 global hubs, creating a "Heatmap of
+                    Resistance" that reroutes cargo automatically to secondary channels.</p>
+                <div class="tech-list">
+                    <span class="tech-tag">PYTORCH</span>
+                    <span class="tech-tag">GRAFANA</span>
+                    <span class="tech-tag">INFLUXDB</span>
+                    <span class="tech-tag">AIS_SATELLITE</span>
+                </div>
+            </div>
+            <div style="background: white; border: 1px solid var(--border); padding: 4rem; border-radius: 8px;">
+                <h3>Predictive Throttling</h3>
+                <p>Correlating port arrival windows with ML-driven congestion forecasts allows vessels to automatically
+                    modulate speed, reducing heavy fuel consumption while guaranteeing on-time arrival.</p>
+                <p>This "Just-in-Time" arrival protocol has completely eliminated idle anchoring fees and fuel burn for
+                    our global partners.</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

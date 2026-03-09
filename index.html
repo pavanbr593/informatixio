@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatixio | Global Logistics Intelligence & Supply Chain Engineering</title>
+    <meta name="description"
+        content="Enterprise-class logistics intelligence. Real-time tracking, predictive routing, and warehouse orchestration for the world's leading supply chains.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF8C42;
+            --primary-dark: #E6762E;
+            --navy: #1F4E78;
+            --bg: #FFF8F0;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 4px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-track {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-bottom: 3px solid var(--primary-dark);
+        }
+
+        .btn-track:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            background: var(--navy);
+            color: var(--white);
+            padding: 8rem 0;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 20px 20px 0 var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-image img {
+            width: 100%;
+            display: block;
+            filter: contrast(1.1);
+        }
+
+        /* Solutions */
+        .services {
+            padding: 10rem 0;
+            background: var(--white);
+        }
+
+        .section-tag {
+            background: var(--primary);
+            color: var(--white);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            color: var(--navy);
+            margin-bottom: 4rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .card-img-wrap {
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .card-img-wrap img {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: 3rem;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .card-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.2s;
+        }
+
+        .card-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Global Network */
+        .network {
+            padding: 10rem 0;
+            background: var(--bg);
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .network-map img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .stats-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .stat-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 10rem 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Track Intelligence Section */
+        .track-intelligence {
+            padding: 10rem 0;
+            background: var(--navy);
+            color: white;
+            text-align: center;
+        }
+
+        .track-box {
+            max-width: 700px;
+            margin: 4rem auto 0;
+            background: var(--white);
+            padding: 3.5rem;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .track-box input {
+            flex-grow: 1;
+            padding: 1.2rem 2rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .track-box button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 3rem;
+            border-radius: 4px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Outfit', sans-serif;
+            transition: background 0.2s;
+        }
+
+        .track-box button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Partners Marquee */
+        .partners {
+            padding: 4rem 0;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            display: flex;
+            gap: 6rem;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 6rem;
+            animation: scroll 40s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .brand {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--navy);
+            opacity: 0.2;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 6rem 0 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 6rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-links h5 {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            opacity: 0.7;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 1024px) {
+
+            .hero-grid,
+            .network-grid,
+            .about-grid,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .track-box {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container top-nav">
+            <a href="#" class="logo">INFORMATIX<span>IO</span></a>
+            <nav class="nav-links">
+                <a href="#solutions">Solutions</a>
+                <a href="#network">Network</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="btn-track">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="section-tag" style="background: var(--white); color: var(--navy);">Global
+                        Protocol</span>
+                    <h1>Connecting the World through Intelligence.</h1>
+                    <p>Advanced logistics engineering and real-time supply chain orchestration for the modern
+                        enterprise.</p>
+                    <a href="#solutions" class="btn-track" style="margin-right: 1.5rem;">Our Solutions</a>
+                    <a href="#contact" style="color: white; font-weight: 700; text-decoration: none;">Contact Us →</a>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/gps_dashboard.png" alt="Logistics Intelligence Dashboard">
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        <span class="brand">FedEx</span>
+                        <span class="brand">DHL</span>
+                        <span class="brand">Maersk</span>
+                        <span class="brand">UPS</span>
+                        <span class="brand">DP World</span>
+                        <span class="brand">Kuehne + Nagel</span>
+                        <span class="brand">DB Schenker</span>
+                        <!-- Duplicate -->
+                        <span class="brand">FedEx</span>
+                        <span class="brand">DHL</span>
+                        <span class="brand">Maersk</span>
+                        <span class="brand">UPS</span>
+                        <span class="brand">DP World</span>
+                        <span class="brand">Kuehne + Nagel</span>
+                        <span class="brand">DB Schenker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Logistical Sync</span>
+                    <h2>Excellence in Motion.</h2>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="card-img-wrap"><img src="assets/gps_dashboard.png" alt="Dashboard View"></div>
+                        <div class="card-body">
+                            <h3>Last-Mile Orchestration</h3>
+                            <p>Maximizing first-attempt delivery rates through real-time driver pivot protocols and
+                                geofence sync.</p>
+                            <a href="use-cases/last-mile-orchestration.html" class="card-link">View Analysis →</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-img-wrap"><img src="assets/maritime_routing.png" alt="Maritime View"></div>
+                        <div class="card-body">
+                            <h3>Predictive Route Modeling</h3>
+                            <p>Global port telemetry integration that anticipates congestion 96 hours before impact.</p>
+                            <a href="use-cases/predictive-route-modeling.html" class="card-link">View Analysis →</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-img-wrap"><img src="assets/warehouse_sync.png" alt="Warehouse View"></div>
+                        <div class="card-body">
+                            <h3>Warehouse Automation Sync</h3>
+                            <p>Eliminating operational deadlocks through a unified data mesh for human and robotic
+                                agents.</p>
+                            <a href="use-cases/warehouse-automation-sync.html" class="card-link">View Analysis →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="network" class="network">
+            <div class="container">
+                <div class="network-grid">
+                    <div class="network-map">
+                        <img src="assets/global_network.png" alt="Global Logistics Network Map">
+                    </div>
+                    <div class="network-info">
+                        <span class="section-tag">Infrastructure</span>
+                        <h2>A Resilient Global Network.</h2>
+                        <p style="margin-bottom: 3rem; color: var(--text-muted);">Informatixio operates across the major
+                            logistical arteries of the world, providing unmatched engineering support for cross-border
+                            supply chains.</p>
+                        <div class="stats-list">
+                            <div class="stat-item">
+                                <h4>150+</h4>
+                                <p>Cities Served</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>500k</h4>
+                                <p>TEU Optimized</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>5</h4>
+                                <p>Continents Reach</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>99%</h4>
+                                <p>Sync Accuracy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <span class="section-tag">Our Vision</span>
+                    <h2>Engineering the Future of Movement.</h2>
+                    <p>At Informatixio, we believe that logistics is not just about moving boxes—it's about the
+                        intelligence that coordinates them. Our team of engineers in Ahmedabad and globally are
+                        dedicated to building the plumbing for a more efficient world.</p>
+                    <p>We combine deep manufacturing optimization roots with modern cloud-native architecture to create
+                        systems that are as resilient as they are fast.</p>
+                </div>
+                <div class="about-image">
+                    <div style="background: var(--navy); padding: 4rem; border-radius: 12px; color: white;">
+                        <h4 style="font-family: 'Outfit'; font-size: 2rem; margin-bottom: 2rem;">Our Philosophy</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                                <span style="color: var(--primary); font-weight: 800;">01</span>
+                                <span>Data must be streaming, never batch-processed.</span>
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                                <span style="color: var(--primary); font-weight: 800;">02</span>
+                                <span>Automation should enhance human labor, not replace it.</span>
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                                <span style="color: var(--primary); font-weight: 800;">03</span>
+                                <span>Predictive modeling is the only way to protect margins.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="track-intelligence">
+            <div class="container">
+                <span class="section-tag" style="background: var(--white); color: var(--navy);">Connect</span>
+                <h2 style="font-family: 'Outfit'; font-size: 3.5rem; margin-top: 1rem;">Let's Engineer Your Network.
+                </h2>
+                <p style="opacity: 0.8; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Our
+                    logistics engineers are ready to audit your supply chain and implement predictive orchestration.
+                    Contact our global headquarters today.</p>
+                <div style="margin-top: 4rem; display: flex; justify-content: center; gap: 2rem;">
+                    <a href="mailto:contact@informatixio.com" class="btn-track"
+                        style="padding: 1.2rem 3rem; font-size: 1.1rem; text-decoration: none;">Email our HQ</a>
+                    <a href="#" class="btn-track"
+                        style="background: transparent; border: 2px solid white; padding: 1.2rem 3rem; font-size: 1.1rem; text-decoration: none;">Request
+                        a Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">INFORMATIX<span>IO</span></div>
+                    <p style="opacity: 0.6; font-size: 0.9rem; line-height: 1.8;">Leading the evolution of logistics
+                        through data-driven engineering and predictive supply chain management.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Intelligence</h5>
+                    <ul>
+                        <li><a href="#solutions">Predictive Routing</a></li>
+                        <li><a href="#solutions">Last-Mile Sync</a></li>
+                        <li><a href="#solutions">Automation Mesh</a></li>
+                        <li><a href="#network">Network Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#">Engineering Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Global Hubs</h5>
+                    <ul>
+                        <li><a href="#">Ahmedabad, HQ</a></li>
+                        <li><a href="#">Mumbai, Digital</a></li>
+                        <li><a href="#">Singapore, Tech</a></li>
+                        <li><a href="#">Amsterdam, Ops</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Informatixio Inc. All rights reserved.</p>
+                <p>Cookies & Privacy Protocol | Engineering Standards</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
